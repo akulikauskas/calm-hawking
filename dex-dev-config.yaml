@@ -1,0 +1,24 @@
+# Example Dex configuration for local testing with dex-cli
+issuer: http://127.0.0.1:5556/dex
+storage:
+  type: memory
+web:
+  http: 0.0.0.0:5556
+
+# Client configuration matching dex-cli defaults
+staticClients:
+  - id: example-app
+    redirectURIs:
+      - 'http://127.0.0.1:5555/callback'
+      - 'http://localhost:5555/callback'
+    name: 'Example App'
+    public: true
+
+# Enable local mock users for testing
+enablePasswordDB: true
+staticPasswords:
+  - email: "admin@example.com"
+    # BCrypt hash of "password"
+    hash: "$2a$10$2b2cU8CPhOTaGrs1HRQuAueS7JTT5ZHsHSzYiFPm1leZck7Mc8T4W"
+    username: "admin"
+    userID: "08a5da84-ae62-4edd-bbc2-ad96ed454ed1"

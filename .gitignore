@@ -1,0 +1,12 @@
+# Binaries
+dex-cli
+dex-cli.exe
+*.exe
+
+# Test binaries
+*.test
+__debug_bin*
+
+# OS files
+.DS_Store
+Thumbs.db
